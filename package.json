@@ -1,0 +1,37 @@
+{
+  "name": "@stock_watch/root",
+  "author": "Chuah Sheou Shuang",
+  "version": "0.1.0",
+  "main": "index.js",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^13.0.0",
+    "@testing-library/user-event": "^13.2.1",
+    "@types/jest": "^27.0.1",
+    "@types/node": "^16.7.13",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "antd": "^5.16.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3",
+    "react-scripts": "5.0.1",
+    "react-use": "^17.5.0",
+    "typescript": "^5.0.4",
+    "web-vitals": "^2.1.0"
+  },
+  "scripts": {
+    "format": "prettier --write --ignore-unknown .",
+    "build": "npx rimraf dist && mkdir dist && npm run build --workspaces --if-present ",
+    "start": "concurrently -c -n web,types \"npm run start -w packages/frontend/web\"",
+    "test": "react-scripts test",
+    "clean": "rimraf node_modules ./packages/*/*/{dist, node_modules, build, coverage}",
+    "reset": "npm run clean && npm i && npm run build"
+  },
+  "workspaces": [
+    "packages/shared/types",
+    "packages/app/*",
+    "packages/api/*"
+  ]
+}
