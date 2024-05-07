@@ -5,19 +5,19 @@
   "main": "index.js",
   "private": true,
   "devDependencies": {
+    "concurrently": "^8.0.1",
     "prettier": "3.2.5"
   },
   "scripts": {
     "format": "prettier --write --ignore-unknown .",
     "build": "npx rimraf dist && mkdir dist && npm run build --workspaces --if-present ",
-    "start": "concurrently -c -n web,types \"npm run start -w packages/frontend/web\"",
+    "start": "concurrently -c -n web \"npm run start -w packages/frontend/web\"",
     "test": "react-scripts test",
     "clean": "rimraf node_modules ./packages/*/*/{dist, node_modules, build, coverage}",
     "reset": "npm run clean && npm i && npm run build"
   },
   "workspaces": [
-    "packages/shared/types",
-    "packages/app/*",
+    "packages/frontend/*",
     "packages/api/*"
   ]
 }

@@ -5,7 +5,6 @@
   "main": "index.js",
   "private": true,
   "dependencies": {
-    "@stock_watch/shared/types": "file:./packages/shared/types",
     "antd": "^5.16.0",
     "http-proxy-middleware": "3.0.0",
     "react": "^18.2.0",
@@ -32,10 +31,11 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
-    "@types/jest": "^^29.5.12",
+    "@types/jest": "^29.5.12",
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "@types/react-router-dom": "5.3.3",
     "react-scripts": "^5.0.1",
     "typescript": "^4.9.5"
   },
@@ -44,11 +44,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test"
   },
-  "workspaces": [
-    "packages/shared/types",
-    "packages/app/*",
-    "packages/api/*"
-  ],
   "eslintConfig": {
     "extends": [
       "react-app",
